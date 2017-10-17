@@ -1,6 +1,6 @@
 # YubiKey NDEF Reader for iOS
 
-This app reads NFC NDEF payload from YubiKey NEO. 
+This app reads NFC NDEF payload from [YubiKey NEO](https://www.yubico.com/products/yubikey-hardware/yubikey-neo/). 
 
 ### Introduction
 
