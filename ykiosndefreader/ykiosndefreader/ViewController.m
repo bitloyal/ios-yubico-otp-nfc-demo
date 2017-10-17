@@ -52,8 +52,8 @@
             NSLog(@"Payload: %@",payload);
             NSLog(@"Payload data:%@",payload.payload);
             
-            //const unsigned char bytes[] = {TEXT,'e','n','-','U','S'};  // 0x05, 'e', 'n', '-', 'U', 'S'
-            const unsigned char bytes[] = {URI};  // 0x04
+            //const unsigned char bytes[] = {TEXT,'e','n','-','U','S'};  // 0x05, 'e', 'n', '-', 'U', 'S' // if NDEF data is configured as text
+            const unsigned char bytes[] = {URI};  // 0x04 // if NDEF data is configured as URI
             NSData *prefixPayload = [NSData dataWithBytes:bytes length:sizeof(bytes)];
             
             if ([[payload.payload subdataWithRange:NSMakeRange(0, sizeof(bytes))] isEqualToData:prefixPayload]) {
@@ -67,16 +67,18 @@
                 
                 
                 dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-                    #if 0
+#if 0
                         // Copy the OTP into clipboard
                         UIPasteboard *pb = [UIPasteboard generalPasteboard];
                         [pb setString:NDEF];
                         NSLog(@"Password copied to clipboard");
-                    #endif
+#endif
+#if 1
+                        //Go to my.yubico.com/neo/ to validate the OTP
+                        UIApplication *application = [UIApplication sharedApplication];
+                        [application openURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://%@",NDEF]] options:@{} completionHandler:nil];
+#endif
                     
-                    //Go to my.yubico.com/neo/ to validate the OTP
-                    UIApplication *application = [UIApplication sharedApplication];
-                    [application openURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://%@",NDEF]] options:@{} completionHandler:nil];
                 });
                 
                 [NDEF release];
