@@ -9,11 +9,12 @@
 /* Begin PBXBuildFile section */
 		F38D86501F95FFA900A5947F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F38D864F1F95FFA900A5947F /* AppDelegate.m */; };
 		F38D86531F95FFA900A5947F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F38D86521F95FFA900A5947F /* ViewController.m */; };
-		F38D86561F95FFA900A5947F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F38D86541F95FFA900A5947F /* Main.storyboard */; };
 		F38D86581F95FFA900A5947F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F38D86571F95FFA900A5947F /* Assets.xcassets */; };
 		F38D865B1F95FFA900A5947F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F38D86591F95FFA900A5947F /* LaunchScreen.storyboard */; };
 		F38D865E1F95FFAA00A5947F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F38D865D1F95FFAA00A5947F /* main.m */; };
 		F38D86831F96045E00A5947F /* CoreNFC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F38D86821F96045E00A5947F /* CoreNFC.framework */; };
+		F38D86881F960EDF00A5947F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F38D86541F95FFA900A5947F /* Main.storyboard */; };
+		F38D86891F960F2D00A5947F /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = F38D86871F960E2B00A5947F /* logo.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		F38D865D1F95FFAA00A5947F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F38D86821F96045E00A5947F /* CoreNFC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreNFC.framework; path = System/Library/Frameworks/CoreNFC.framework; sourceTree = SDKROOT; };
 		F38D86841F96055E00A5947F /* ykiosndefreader.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ykiosndefreader.entitlements; sourceTree = "<group>"; };
+		F38D86871F960E2B00A5947F /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 		F38D864D1F95FFA900A5947F /* ykiosndefreader */ = {
 			isa = PBXGroup;
 			children = (
+				F38D86871F960E2B00A5947F /* logo.png */,
 				F38D86841F96055E00A5947F /* ykiosndefreader.entitlements */,
 				F38D864E1F95FFA900A5947F /* AppDelegate.h */,
 				F38D864F1F95FFA900A5947F /* AppDelegate.m */,
@@ -148,9 +151,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F38D86891F960F2D00A5947F /* logo.png in Resources */,
+				F38D86881F960EDF00A5947F /* Main.storyboard in Resources */,
 				F38D865B1F95FFA900A5947F /* LaunchScreen.storyboard in Resources */,
 				F38D86581F95FFA900A5947F /* Assets.xcassets in Resources */,
-				F38D86561F95FFA900A5947F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
