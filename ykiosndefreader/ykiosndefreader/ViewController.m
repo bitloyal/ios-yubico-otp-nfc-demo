@@ -16,12 +16,13 @@
 @implementation ViewController
 @synthesize session;
 
+// NDEF data configuration constants
 #define URI      0x04
 #define TEXT     0x05
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self startNFCSession];
+    [self startNFCSession]; // Trigger NFC Session
     // Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -76,7 +77,7 @@
 #if 1
                         //Go to my.yubico.com/neo/ to validate the OTP
                         UIApplication *application = [UIApplication sharedApplication];
-                        [application openURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://%@",NDEF]] options:@{} completionHandler:nil];
+                    [application openURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://%@",NDEF]] options:@{} completionHandler:nil];
 #endif
                     
                 });
