@@ -18,6 +18,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F31D99E91F9655CA005D9ACD /* yubico_180_w.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yubico_180_w.png; sourceTree = "<group>"; };
+		F31D99EA1F9655CA005D9ACD /* yubico_80_w.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yubico_80_w.png; sourceTree = "<group>"; };
+		F31D99EB1F9655CA005D9ACD /* yubico_120_w.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yubico_120_w.png; sourceTree = "<group>"; };
+		F31D99EC1F9655CA005D9ACD /* yubico_58_w.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yubico_58_w.png; sourceTree = "<group>"; };
 		F38D864B1F95FFA900A5947F /* ykiosndefreader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ykiosndefreader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F38D864E1F95FFA900A5947F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F38D864F1F95FFA900A5947F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -45,6 +49,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F31D99ED1F965610005D9ACD /* Supportive Files */ = {
+			isa = PBXGroup;
+			children = (
+				F38D86871F960E2B00A5947F /* logo.png */,
+				F31D99EC1F9655CA005D9ACD /* yubico_58_w.png */,
+				F31D99EA1F9655CA005D9ACD /* yubico_80_w.png */,
+				F31D99EB1F9655CA005D9ACD /* yubico_120_w.png */,
+				F31D99E91F9655CA005D9ACD /* yubico_180_w.png */,
+			);
+			path = "Supportive Files";
+			sourceTree = "<group>";
+		};
 		F38D86421F95FFA900A5947F = {
 			isa = PBXGroup;
 			children = (
@@ -65,7 +81,7 @@
 		F38D864D1F95FFA900A5947F /* ykiosndefreader */ = {
 			isa = PBXGroup;
 			children = (
-				F38D86871F960E2B00A5947F /* logo.png */,
+				F31D99ED1F965610005D9ACD /* Supportive Files */,
 				F38D86841F96055E00A5947F /* ykiosndefreader.entitlements */,
 				F38D864E1F95FFA900A5947F /* AppDelegate.h */,
 				F38D864F1F95FFA900A5947F /* AppDelegate.m */,
@@ -301,6 +317,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_ENTITLEMENTS = ykiosndefreader/ykiosndefreader.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LQA3CS5MM7;
@@ -316,6 +333,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_ENTITLEMENTS = ykiosndefreader/ykiosndefreader.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LQA3CS5MM7;
