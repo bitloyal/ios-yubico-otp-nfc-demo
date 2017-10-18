@@ -14,6 +14,7 @@
 @end
 
 @implementation NFCReader
+@synthesize delegate;
 @synthesize session;
 
 // NDEF data configuration constants
@@ -21,15 +22,19 @@
 #define TEXT     0x05
 
 -(id)init {
-    [self startNFCSession]; // Trigger NFC Session
+    [self initNFCSession]; // Trigger NFC Session
     return self;
 }
 
 #pragma mark NFC Methods
-- (void)startNFCSession;
+- (void)initNFCSession;
 {
     self.session = [[NFCNDEFReaderSession alloc] initWithDelegate:self queue:NULL invalidateAfterFirstRead:true];
     self.session.alertMessage = @"Hold your iPhone near the YubiKey NEO";
+}
+
+- (void)startNFCSession;
+{
     [self.session beginSession];
     NSLog(@"NFC Session is begin");
 }
@@ -58,23 +63,7 @@
                                   [NSString stringWithUTF8String:[[payload.payload subdataWithRange:NSMakeRange(loc, len)] bytes]] ];
                 
                 NSLog(@"NDEF: %@", NDEF);
-                
-                
-                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-#if 0
-                    // Copy the OTP into clipboard
-                    UIPasteboard *pb = [UIPasteboard generalPasteboard];
-                    [pb setString:NDEF];
-                    NSLog(@"Password copied to clipboard");
-#endif
-#if 1
-                    //Go to my.yubico.com/neo/ to validate the OTP
-                    UIApplication *application = [UIApplication sharedApplication];
-                    [application openURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://%@",NDEF]] options:@{} completionHandler:nil];
-#endif
-                    
-                });
-                
+                [[self delegate] didReadNFCPayload:NDEF withError:NULL];
                 [NDEF release];
                 
             }

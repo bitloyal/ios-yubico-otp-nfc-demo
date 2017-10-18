@@ -95,8 +95,8 @@
 				F38D86591F95FFA900A5947F /* LaunchScreen.storyboard */,
 				F38D865C1F95FFA900A5947F /* Info.plist */,
 				F38D865D1F95FFAA00A5947F /* main.m */,
-				F30A4DE01F9747BC0071930B /* NFCReader.m */,
 				F30A4DE21F9747CA0071930B /* NFCReader.h */,
+				F30A4DE01F9747BC0071930B /* NFCReader.m */,
 			);
 			path = ykiosndefreader;
 			sourceTree = "<group>";

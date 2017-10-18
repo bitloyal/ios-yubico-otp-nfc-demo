@@ -21,10 +21,47 @@
                                 <rect key="frame" x="87" y="47" width="200" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W0W-ZM-mc6">
+                                <rect key="frame" x="16" y="323" width="343" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f57-qa-3sc">
+                                <rect key="frame" x="108" y="438" width="158" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Copy OTP to Clipboard"/>
+                                <connections>
+                                    <action selector="onClickButtonCopyOTP:" destination="BYZ-38-t0r" eventType="touchUpInside" id="s2l-1y-l4g"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0K2-GL-DY3">
+                                <rect key="frame" x="102" y="476" width="170" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Validate OTP on Browser"/>
+                                <connections>
+                                    <action selector="onClickButtonValidateOTP:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Nbn-Ec-AEU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a1I-gM-ZLT">
+                                <rect key="frame" x="132" y="514" width="111" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Read OTP Again"/>
+                                <connections>
+                                    <action selector="onClickButtonReread:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2mj-xa-h6N"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="buttonCopyOTP" destination="f57-qa-3sc" id="hfa-rd-jDI"/>
+                        <outlet property="buttonReread" destination="a1I-gM-ZLT" id="cJy-qf-bLb"/>
+                        <outlet property="buttonValidateOTP" destination="0K2-GL-DY3" id="WGb-3W-DlO"/>
+                        <outlet property="labelStatus" destination="W0W-ZM-mc6" id="q9e-VE-fOC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

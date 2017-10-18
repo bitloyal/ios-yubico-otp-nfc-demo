@@ -9,9 +9,17 @@
 #import <UIKit/UIKit.h>
 #include "NFCReader.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <NFCReaderDelegate>
 {
+    // NFC Reader Class
     NFCReader* reader;
+    
+    // ViewController UI Objects
+    IBOutlet UILabel *labelStatus;
+    IBOutlet UIButton* buttonCopyOTP;
+    IBOutlet UIButton* buttonValidateOTP;
+    IBOutlet UIButton* buttonReread;
+    
 }
 
 @end
