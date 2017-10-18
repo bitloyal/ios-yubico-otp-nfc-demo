@@ -7,14 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <CoreNFC/CoreNFC.h>
+#include "NFCReader.h"
 
-@interface ViewController : UIViewController <NFCNDEFReaderSessionDelegate>
+@interface ViewController : UIViewController
 {
-    
+    NFCReader* reader;
 }
-
-@property (nonatomic, retain) NFCNDEFReaderSession *session;
 
 @end
 

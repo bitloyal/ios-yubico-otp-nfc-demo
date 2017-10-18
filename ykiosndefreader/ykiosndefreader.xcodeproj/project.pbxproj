@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F30A4DE11F9747BC0071930B /* NFCReader.m in Sources */ = {isa = PBXBuildFile; fileRef = F30A4DE01F9747BC0071930B /* NFCReader.m */; };
 		F38D86501F95FFA900A5947F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F38D864F1F95FFA900A5947F /* AppDelegate.m */; };
 		F38D86531F95FFA900A5947F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F38D86521F95FFA900A5947F /* ViewController.m */; };
 		F38D86581F95FFA900A5947F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F38D86571F95FFA900A5947F /* Assets.xcassets */; };
@@ -18,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F30A4DE01F9747BC0071930B /* NFCReader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NFCReader.m; sourceTree = "<group>"; };
+		F30A4DE21F9747CA0071930B /* NFCReader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NFCReader.h; sourceTree = "<group>"; };
 		F31D99E91F9655CA005D9ACD /* yubico_180_w.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yubico_180_w.png; sourceTree = "<group>"; };
 		F31D99EA1F9655CA005D9ACD /* yubico_80_w.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yubico_80_w.png; sourceTree = "<group>"; };
 		F31D99EB1F9655CA005D9ACD /* yubico_120_w.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yubico_120_w.png; sourceTree = "<group>"; };
@@ -92,6 +95,8 @@
 				F38D86591F95FFA900A5947F /* LaunchScreen.storyboard */,
 				F38D865C1F95FFA900A5947F /* Info.plist */,
 				F38D865D1F95FFAA00A5947F /* main.m */,
+				F30A4DE01F9747BC0071930B /* NFCReader.m */,
+				F30A4DE21F9747CA0071930B /* NFCReader.h */,
 			);
 			path = ykiosndefreader;
 			sourceTree = "<group>";
@@ -181,6 +186,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F30A4DE11F9747BC0071930B /* NFCReader.m in Sources */,
 				F38D86531F95FFA900A5947F /* ViewController.m in Sources */,
 				F38D865E1F95FFAA00A5947F /* main.m in Sources */,
 				F38D86501F95FFA900A5947F /* AppDelegate.m in Sources */,
