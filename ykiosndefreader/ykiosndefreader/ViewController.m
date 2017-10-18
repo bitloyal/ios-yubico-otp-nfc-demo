@@ -77,7 +77,7 @@
 #if 1
                         //Go to my.yubico.com/neo/ to validate the OTP
                         UIApplication *application = [UIApplication sharedApplication];
-                    [application openURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://%@",NDEF]] options:@{} completionHandler:nil];
+                        [application openURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://%@",NDEF]] options:@{} completionHandler:nil];
 #endif
                     
                 });
