@@ -71,6 +71,13 @@
 }
 
 -(IBAction) onClickButtonReread: (id) sender {
+    if (reader)
+    {
+        [reader dealloc];
+    }
+    
+    reader = [[NFCReader alloc] init];
+    reader.delegate = self;
     [reader startNFCSession];
     [self setVisibleUIObjects:false];
 }
@@ -78,6 +85,20 @@
 #pragma NFC Reader Functionalities
 -(void) didReadNFCPayload:(NSString*)payload withError:(NSError*)error
 {
+    if (error) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [labelStatus setText:@""];
+            [labelStatus setHidden:true];
+            [buttonCopyOTP setHidden:true];
+            [buttonValidateOTP setHidden:true];
+            [buttonReread setHidden:false];
+            
+            reader = [[NFCReader alloc] init];
+            reader.delegate = self;
+        });
+        return;
+    }
+    
     [self setVisibleUIObjects:true];
     
     // Set the labelStatus

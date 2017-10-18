@@ -26,6 +26,11 @@
     return self;
 }
 
+- (void)dealloc {
+    [session release];
+    [super dealloc];
+}
+
 #pragma mark NFC Methods
 - (void)initNFCSession;
 {
@@ -71,9 +76,11 @@
     }
 }
 
-- (void) readerSession:(nonnull NFCNDEFReaderSession *)session didInvalidateWithError:(nonnull NSError *)error {
-    [self.session release];
-    self.session = [[NFCNDEFReaderSession alloc] initWithDelegate:self queue:NULL invalidateAfterFirstRead:true];
+- (void)readerSession:(nonnull NFCNDEFReaderSession *)session didInvalidateWithError:(nonnull NSError *)error {
+    NSLog(@"didInvalidateWithError: %@ for session: %@",error,session);
+    if (error.code >= NFCReaderSessionInvalidationErrorUserCanceled && error.code < NFCReaderSessionInvalidationErrorFirstNDEFTagRead) {
+        [[self delegate] didReadNFCPayload:NULL withError:error];
+    }
 }
 
 @end
