@@ -21,6 +21,7 @@
 /* Begin PBXFileReference section */
 		F30A4DE01F9747BC0071930B /* NFCReader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NFCReader.m; sourceTree = "<group>"; };
 		F30A4DE21F9747CA0071930B /* NFCReader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NFCReader.h; sourceTree = "<group>"; };
+		F31A1B0A1F979FA50025BD1D /* yubico-1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yubico-1024.png"; sourceTree = "<group>"; };
 		F31D99E91F9655CA005D9ACD /* yubico_180_w.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yubico_180_w.png; sourceTree = "<group>"; };
 		F31D99EA1F9655CA005D9ACD /* yubico_80_w.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yubico_80_w.png; sourceTree = "<group>"; };
 		F31D99EB1F9655CA005D9ACD /* yubico_120_w.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yubico_120_w.png; sourceTree = "<group>"; };
@@ -55,6 +56,7 @@
 		F31D99ED1F965610005D9ACD /* Supportive Files */ = {
 			isa = PBXGroup;
 			children = (
+				F31A1B0A1F979FA50025BD1D /* yubico-1024.png */,
 				F38D86871F960E2B00A5947F /* logo.png */,
 				F31D99EC1F9655CA005D9ACD /* yubico_58_w.png */,
 				F31D99EA1F9655CA005D9ACD /* yubico_80_w.png */,
