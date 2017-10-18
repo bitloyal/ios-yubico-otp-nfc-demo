@@ -30,13 +30,13 @@
 - (void)initNFCSession;
 {
     self.session = [[NFCNDEFReaderSession alloc] initWithDelegate:self queue:NULL invalidateAfterFirstRead:true];
-    self.session.alertMessage = @"Hold your iPhone near the YubiKey NEO";
+    self.session.alertMessage = @"Hold iPhone near your YubiKey NEO";
 }
 
 - (void)startNFCSession;
 {
     [self.session beginSession];
-    NSLog(@"NFC Session is begin");
+    NSLog(@"NFC Session has begun");
 }
 
 - (void)readerSessionDidBecomeActive:(NFCReaderSession *)session

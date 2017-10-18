@@ -53,7 +53,7 @@
         NSString* otp = [labelStatus.text substringFromIndex:prefix.length];
         [pb setString:otp];
         
-        NSLog(@"Password copied to clipboard");
+        NSLog(@"OTP copied to clipboard");
     });
 }
 
