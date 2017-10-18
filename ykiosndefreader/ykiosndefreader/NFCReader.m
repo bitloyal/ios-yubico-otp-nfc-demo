@@ -95,6 +95,8 @@
                 [[self delegate] didReadNFCPayload:NDEF withError:NULL];
                 [NDEF release];
                 
+            }else {
+                [[self delegate] didReadNFCPayload:@"" withError:NULL];
             }
         }
     }

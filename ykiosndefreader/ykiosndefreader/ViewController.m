@@ -123,18 +123,33 @@
         return;
     }
     
-    [self setVisibleUIObjects:true];
+    if ([payload isEqualToString:@""])
+    {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [labelStatus setText:@"Invalid OTP format"];
+            labelStatus.textAlignment = NSTextAlignmentCenter;
+            [labelStatus setHidden:false];
+            [buttonCopyOTP setHidden:true];
+            [buttonValidateOTP setHidden:true];
+            [buttonReread setHidden:false];
+        });
+        
+    }else {
+        [self setVisibleUIObjects:true];
+        
+        // Set the labelStatus
+        // Prefix for URI: https://my.yubico.com/neo/
+        NSString* uri = [[NSString alloc] initWithString:@"my.yubico.com/neo/"];
+        NSString* otp = [[NSString alloc] initWithString:[payload substringFromIndex:uri.length]];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            labelStatus.textAlignment = NSTextAlignmentLeft;
+            [labelStatus setText:[NSString stringWithFormat:@"OTP: %@",otp]];
+        });
+        [uri release];
+        [otp release];
+    }
     
-    // Set the labelStatus
-    // Prefix for URI: https://my.yubico.com/neo/
-    NSString* uri = [[NSString alloc] initWithString:@"my.yubico.com/neo/"];
-    NSString* otp = [[NSString alloc] initWithString:[payload substringFromIndex:uri.length]];
-    
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [labelStatus setText:[NSString stringWithFormat:@"OTP: %@",otp]];
-    });
-    [uri release];
-    [otp release];
 }
 
 @end
