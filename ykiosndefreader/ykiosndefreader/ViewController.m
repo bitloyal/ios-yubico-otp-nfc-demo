@@ -42,10 +42,31 @@
     [super viewDidLoad];
     [self setVisibleUIObjects:false];
     
-    reader = [[NFCReader alloc] init];
-    reader.delegate = self;
-    
-    [reader startNFCSession];
+    if ([NFCNDEFReaderSession readingAvailable]) {
+        reader = [[NFCReader alloc] init];
+        reader.delegate = self;
+        [reader startNFCSession];
+    }
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    if (![NFCNDEFReaderSession readingAvailable]) {
+        // iOS Device does not support NFC Reader
+        UIAlertController * alert=[UIAlertController alertControllerWithTitle:@"OTP Reader"
+                                                                      message:@"This iOS Device does not support NFC Reader."
+                                                               preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction* yesButton = [UIAlertAction actionWithTitle:@"OK"
+                                                            style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * action)
+                                    {
+                                        exit(0);
+                                    }];
+        
+        [alert addAction:yesButton];
+        [self presentViewController:alert animated:YES completion:nil];
+        
+    }
 }
 
 - (void)didReceiveMemoryWarning {

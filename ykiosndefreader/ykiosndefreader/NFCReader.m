@@ -103,6 +103,10 @@
 }
 
 - (void)readerSession:(nonnull NFCNDEFReaderSession *)session didInvalidateWithError:(nonnull NSError *)error {
+    if (error.code == NFCReaderSessionInvalidationErrorFirstNDEFTagRead) {
+        return;
+    }
+    
     NSLog(@"didInvalidateWithError: %@ for session: %@",error,session);
     if (error.code >= NFCReaderSessionInvalidationErrorUserCanceled && error.code < NFCReaderSessionInvalidationErrorFirstNDEFTagRead) {
         [[self delegate] didReadNFCPayload:NULL withError:error];
